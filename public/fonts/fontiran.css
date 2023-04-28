@@ -23,9 +23,8 @@ This set of fonts are used in this project under the license: (.....)
 @font-face {
 	font-family: IRANSansX;
 	font-style: normal;
-	font-weight: 700;
-	src: url('fonts/woff/IRANSansX-Bold.woff') format('woff'),   
-	url('fonts/woff2/IRANSansX-Bold.woff2') format('woff2');	 
+	src: url('fonts/woff/IRANSansX-Regular.woff') format('woff'),   
+	url('fonts/woff2/IRANSansX-Regular.woff2') format('woff2');	 
 }
 @font-face {
 	font-family: IRANSansXNum;
