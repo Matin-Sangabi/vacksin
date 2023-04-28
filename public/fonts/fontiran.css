@@ -17,16 +17,20 @@ This set of fonts are used in this project under the license: (.....)
 *	
 **/
 
-
-
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  src: url("fonts/woff/IRANSansX-Regular.woff") format("woff"),
+    url("fonts/woff2/IRANSansX-Regular.woff2") format("woff2");
+}
 
 @font-face {
-	font-family: IRANSansX;
-	font-style: normal;
-	src: url('fonts/woff/IRANSansX-Regular.woff') format('woff'),   
-	url('fonts/woff2/IRANSansX-Regular.woff2') format('woff2');	 
+  font-family: Roboto;
+  font-style: normal;
+  src: url("roboto/Roboto-Light.ttf") format(".ttf"),
+    url("roboto/Roboto-Bold.ttf") format(".ttf");
 }
 @font-face {
-	font-family: IRANSansXNum;
-	src: url('fonts/woff/IRANSansXFaNum-Bold.woff') format('woff');
+  font-family: IRANSansXNum;
+  src: url("fonts/woff/IRANSansXFaNum-Bold.woff") format("woff");
 }
