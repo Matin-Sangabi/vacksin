@@ -6,7 +6,7 @@ const HeaderLine = () => {
         width="800"
         height="500"
         fill="#ff12cc"
-        className="absolute  left-44 top-0  hidden md:block z-30 rotate-[100deg] "
+        className=" absolute left-44 top-0  hidden lg:block z-30 rotate-[100deg] "
       >
         <path
           fill="url(#pattern_svg__a)"

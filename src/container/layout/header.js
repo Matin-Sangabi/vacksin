@@ -9,7 +9,7 @@ const navigation = [
 const Header = () => {
   return (
     <header className="sticky top-0 w-full transition-all ease-in-out duration-100 z-40 backdrop-blur-xl blur-0 opacity-100">
-      <div className="container xl:max-w-screen-xl top-0 py-2  mx-auto px-2 md:px-0">
+      <div className="container xl:max-w-screen-xl top-0 py-2  mx-auto px-2 lg:px-0">
         <nav className="flex items-center justify-between">
           <div className="w-full md:hidden flex items-center justify-between">
             <Link href={"/"}>
@@ -26,9 +26,8 @@ const Header = () => {
           <Link href={"/"}>
             <img
               src={"/images/logo.png"}
-              width={140}
-              height={35}
-              className="hidden md:block"
+              
+              className="hidden md:block w-28 "
             />
           </Link>
           <div className="hidden md:flex items-center gap-x-20">
