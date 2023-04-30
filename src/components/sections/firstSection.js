@@ -16,7 +16,7 @@ const FirstSection = () => {
             </span>
           </div>
           <div className="text-center md:text-right px-2 pt-2">
-            <h1 className="text-blue-950 font-black text-4xl md:text-3xl  lg:text-[50px] xl:text-[50px] lg:leading-snug">
+            <h1 className="text-blue-950 font-black text-4xl md:text-3xl  lg:text-[50px] xl:text-[50px] leading-snug md:leading-none lg:leading-snug">
               با واکسیناسیون می توانیم به این بیماری همه گیر پایان دهیم
             </h1>
           </div>
