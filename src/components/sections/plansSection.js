@@ -7,13 +7,13 @@ const PlansSection = () => {
   return (
     <section className="container max-w-screen-xl px-2 mx-auto my-28 flex flex-col justify-between">
       <div className="grid grid-cols-12 gap-x-6  gap-y-8 relative mb-20 px-2">
-        <div className="col-span-12  lg:col-span-3">
+        <div className="col-span-12 md:col-span-3">
           <h1 className="text-[30px] text-blue-950 font-black leading-snug">
             چرا باید حتما واکسن بزینم ؟{" "}
           </h1>
         </div>
-        <div className="col-span-12  "></div>
-        <div className="col-span-12  lg:col-span-7 pt-2">
+        <div className="col-span-12 md:col-span-1"></div>
+        <div className="col-span-12  md:col-span-7 pt-2">
           <p className="text-gray-500 font-normal leading-loose text-base">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
