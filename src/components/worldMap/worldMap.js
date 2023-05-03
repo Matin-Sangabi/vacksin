@@ -1,44 +1,46 @@
-import React, { memo } from "react";
+import React, { Fragment, memo } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
 } from "react-simple-maps";
+import BasicTooltip from "../toll-tip/toolTip";
 
-
-const WorldMap = ({ setTooltipContent }) => {
-  
+const WorldMap = ({ content, setTooltipContent }) => {
+  console.log(content);
   return (
     <div data-tip="" className="max-w-screen-lg mx-auto ">
       <ComposableMap className="relative">
-        <Geographies geography="/features.json" className="cursor-pointer">
+        <Geographies geography="/features.json" className="cursor-pointer" stroke="#">
           {({ geographies }) =>
             geographies.map((geo) => (
-              <Geography
-                className="relative"
-                key={geo.rsmKey}
-                geography={geo}
-                
-                onClick={() => {
-                  setTooltipContent(geo);
-                }}
-                
-                style={{
-                  default: {
-                    fill: "#D6D6DA",
-                    outline: "none",
-                  },
-                  hover: {
-                    fill: "#F53",
-                    outline: "none",
-                  },
-                  pressed: {
-                    fill: "#E42",
-                    outline: "none",
-                  },
-                }}
-              />
+              <Fragment key={geo.rsmKey}>
+                <BasicTooltip title={content}>
+                  <Geography
+                    className="relative"
+                    geography={geo}
+                    onClick={() => {
+                      setTooltipContent(`${geo.properties.name}`);
+                    }}
+                    onMouseLeave={() => setTooltipContent("")}
+                    style={{
+                      default: {
+                        fill: "#cbd5e1",
+                        outline: "none",
+                      },
+                      hover: {
+                        fill: "#94a3b8",
+                        outline: "none",
+                      },
+                      pressed: {
+                        fill: "#64748b",
+                        outline: "none",
+                      },
+                    }}
+                  />
+                </BasicTooltip>
+              </Fragment>
             ))
           }
         </Geographies>
