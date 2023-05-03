@@ -6,11 +6,13 @@ import {
   Geography,
 } from "react-simple-maps";
 import BasicTooltip from "../toll-tip/toolTip";
+import { useRouter } from "next/router";
 
 const WorldMap = ({ content, setTooltipContent }) => {
   console.log(content);
+  const router = useRouter();
   return (
-    <div data-tip="" className="max-w-screen-lg mx-auto ">
+    <div data-tip="" className="max-w-screen-xl mx-auto ">
       <ComposableMap className="relative">
         <Geographies geography="/features.json" className="cursor-pointer" stroke="#">
           {({ geographies }) =>
@@ -21,7 +23,8 @@ const WorldMap = ({ content, setTooltipContent }) => {
                     className="relative"
                     geography={geo}
                     onClick={() => {
-                      setTooltipContent(`${geo.properties.name}`);
+                      // setTooltipContent(geo);
+                      router.push(`?country=${geo.id}`)
                     }}
                     onMouseLeave={() => setTooltipContent("")}
                     style={{

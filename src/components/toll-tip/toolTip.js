@@ -5,19 +5,20 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 
 const HtmlTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} placement="top" arrow />
+  <Tooltip {...props} classes={{ popper: className }} placement="top" />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#f5f5f9",
+    backgroundColor: "#f8fafc",
     color: "rgba(0, 0, 0, 0.87)",
     maxWidth: 220,
+    borderRadius: 20,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid #dadde9",
+    padding: "0.5rem",
   },
 }));
 
 export default function BasicTooltip({ children, title }) {
-  console.log(title.length);
   return (
     <HtmlTooltip
       title={
