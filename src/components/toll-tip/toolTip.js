@@ -4,6 +4,7 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { BiLoaderCircle } from "react-icons/bi";
+import { intToString } from "@/utils/intToString";
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} placement="top" />
 ))(({ theme }) => ({
@@ -45,7 +46,7 @@ const ToolTipCase = ({ title }) => {
     <React.Fragment>
       <Typography
         color="inherit"
-        className="flex items-center justify-center gap-x-2 text-blue-950"
+        className="flex items-center justify-center gap-x-2 w-36 text-blue-950"
       >
         {" "}
         <span
@@ -59,7 +60,7 @@ const ToolTipCase = ({ title }) => {
           <TiLocation />
         </span>
       </Typography>
-      <div className="flex items-center gap-x-2 pt-2">
+      <div className="flex items-center justify-between w-full gap-x-2 pt-2">
         <ToolTipDesc name={"تعداد"} num={title.cases} />
         <ToolTipDesc name={"بهبود"} num={title.recovered} />
         <ToolTipDesc name={"مرگ و میر"} num={title.deaths} />
@@ -83,7 +84,7 @@ const ToolTipDesc = ({ name, num }) => {
   return (
     <div className="flex flex-col items-center">
       <span className="text-blue-950 font-bold text-lg ">
-        {num > 1000 ? `${Math.trunc(num / 1000)}k` : Math.round(num)}
+        {intToString(num)}
       </span>
       <span className="text-gray-400 text-xs">{name}</span>
     </div>
