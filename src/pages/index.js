@@ -8,14 +8,20 @@ import Layout from "@/container/layout";
 import { fetcher } from "@/utils/fetcher";
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import toast from "react-hot-toast";
 const Home = () => {
   const router = useRouter();
-  const { data: covidData, isLoading } = useSWR(
+  const {
+    data: covidData,
+    isLoading,
+    error,
+  } = useSWR(
     router.query.country
       ? `https://corona.lmao.ninja/v2/countries/${router.query.country}`
       : null,
     fetcher
   );
+  if (error) toast.error(error.message);
   return (
     <Layout>
       <FirstSection />
