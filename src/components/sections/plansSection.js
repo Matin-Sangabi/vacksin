@@ -48,8 +48,8 @@ export default PlansSection;
 
 const SelectPlan = ({ icon, name, desc, href }) => {
   return (
-    <div className=" relative -1 overflow-hidden hover:shadow-2xl hover:shadow-blue-900 hover:border-blue-500  group/item hover:bg-gradient-to-bl hover:from-blue-400   hover:to-blue-700 hover:rounded-tl-[150px] transition-all ease-in-out duration-300 cursor-pointer flex flex-col  gap-y-4 rounded-[50px] border border-gray-300 py-4 px-10 delay-300 ">
-      <div className=" w-[70px] h-[70px] rounded-3xl flex items-center justify-center text-4xl bg-blue-50 text-blue-600 ">
+    <div className=" relative  overflow-hidden hover:shadow-2xl hover:shadow-blue-900 hover:border-blue-500  group/item hover:bg-gradient-to-bl hover:from-blue-400   hover:to-blue-700 hover:rounded-tl-[150px] transition-all ease-in-out duration-300 cursor-pointer flex flex-col  gap-y-4 rounded-[50px] border border-gray-300 py-4 px-10 delay-300 ">
+      <div className=" w-[70px] h-[70px] rounded-3xl flex items-center justify-center text-4xl bg-sky-50 text-blue-600 ">
         {icon()}
       </div>
       <div className="flex flex-col gap-y-4">

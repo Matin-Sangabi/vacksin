@@ -14,7 +14,7 @@ const StatistiquesSection = () => {
             در این پست آخرین داده های مربوط به کووید-19 آمده است
           </h1>
         </div>
-        <div className="flex  items-center justify-between gap-x-7 text-slate-50 ">
+        <div className="flex lg:flex-row flex-wrap  items-center justify-between gap-x-7 text-slate-50 ">
             <StatistiquesPatient number={125000} desc={"بیماران بهبود یافته"} />
             <StatistiquesPatient number={92000} desc={"بیماران تحت درمان"} border={true} />
             <StatistiquesPatient number={25000} desc={"بیماران در قرنطینه"} border={true} />

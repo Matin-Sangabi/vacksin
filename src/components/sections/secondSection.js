@@ -5,10 +5,10 @@ const SecondSection = () => {
     <section className="container md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto my-12 md:my-20  ">
       <div className="grid grid-cols-12 px-4 items-center md:gap-10 gap-3">
         <div className="col-span-12 md:col-span-5 lg:col-span-6  flex flex-col gap-y-8 order-2 md:order-1">
-          <h1 className="text-4xl text-blue-950 font-black leading-snug whitespace-pre-wrap  md:max-w-lg lg:max-w-2xl  tracking-wider">
+          <h1 className="md:text-2xl lg:text-4xl text-blue-950 font-black leading-snug whitespace-pre-wrap  md:max-w-lg lg:max-w-2xl  tracking-wider">
             ما واکسن هایی ارائه می کنیم که از نظر بالینی آزمایش شده اند
           </h1>
-          <h2 className="text-gray-400 text-sm md:text-lg font-normal leading-relaxed whitespace-pre-wrap ">
+          <h2 className="text-gray-400 text-sm md:text-sm lg:text-lg font-normal leading-relaxed whitespace-pre-wrap ">
             از واکسن زدن نترسید، زیرا ما واکسن را به صورت مرحله ای و با جزئیات
             آزمایش کرده ایم.
           </h2>
@@ -43,7 +43,7 @@ const DetailSection = ({ detail, icon, isSmall = false }) => {
       >
         {icon()}
       </span>
-      <p className=" text-gray-400 leading-snug tracking-wide  ">{detail}</p>
+      <p className=" text-gray-400 leading-snug tracking-wide text-xs lg:text-base  ">{detail}</p>
     </div>
   );
 };

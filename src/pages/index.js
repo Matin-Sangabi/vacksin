@@ -28,7 +28,7 @@ const Home = () => {
       <BrandSections />
       <PlansSection />
       <SecondSection />
-      {/* <StatistiquesSection /> */}
+      <StatistiquesSection />
       <WorldMap covidData={covidData} isLoading={isLoading} />
     </Layout>
   );
