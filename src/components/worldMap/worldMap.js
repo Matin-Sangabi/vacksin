@@ -1,4 +1,4 @@
-import React, { Fragment, memo } from "react";
+import React, { Fragment, memo, useEffect, useState } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -8,25 +8,42 @@ import {
 import BasicTooltip from "../toll-tip/toolTip";
 import { useRouter } from "next/router";
 
-const WorldMap = ({ content, setTooltipContent }) => {
-  console.log(content);
+const WorldMap = ({ covidData, isLoading }) => {
   const router = useRouter();
+  const [openTitle, setOpenTitle] = useState(false);
   return (
-    <div data-tip="" className="max-w-screen-xl mx-auto ">
+    <div className="max-w-screen-xl mx-auto ">
       <ComposableMap className="relative">
-        <Geographies geography="/features.json" className="cursor-pointer" stroke="#">
+        <Geographies
+          geography="/features.json"
+          className="cursor-pointer"
+          stroke="#"
+        >
           {({ geographies }) =>
             geographies.map((geo) => (
               <Fragment key={geo.rsmKey}>
-                <BasicTooltip title={content}>
+                <BasicTooltip
+                  title={covidData}
+                  openTitle={openTitle}
+                  isLoading={isLoading}
+                >
                   <Geography
                     className="relative"
                     geography={geo}
                     onClick={() => {
-                      // setTooltipContent(geo);
-                      router.push(`?country=${geo.id}`)
+                      router.push(
+                        {
+                          pathname: "/",
+                          query: { country: geo.id },
+                        },
+                        undefined,
+                        { scroll: false }
+                      );
+                      setOpenTitle(true);
                     }}
-                    onMouseLeave={() => setTooltipContent("")}
+                    onMouseLeave={() => {
+                      setOpenTitle(false);
+                    }}
                     style={{
                       default: {
                         fill: "#cbd5e1",
