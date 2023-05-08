@@ -9,6 +9,7 @@ import { fetcher } from "@/utils/fetcher";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import toast from "react-hot-toast";
+import MapSection from "@/components/sections/MapSection";
 const Home = () => {
   const router = useRouter();
   const {
@@ -29,7 +30,7 @@ const Home = () => {
       <PlansSection />
       <SecondSection />
       <StatistiquesSection />
-      <WorldMap covidData={covidData} isLoading={isLoading} />
+      <MapSection covidData={covidData} isLoading={isLoading} />
     </Layout>
   );
 };

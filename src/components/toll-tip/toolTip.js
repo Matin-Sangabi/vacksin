@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { BiLoaderCircle } from "react-icons/bi";
 import { intToString } from "@/utils/intToString";
+import MapDesc from "../description/mapDesc";
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} placement="top" />
 ))(({ theme }) => ({
@@ -60,11 +61,7 @@ const ToolTipCase = ({ title }) => {
           <TiLocation />
         </span>
       </Typography>
-      <div className="flex items-center justify-between w-full gap-x-2 pt-2">
-        <ToolTipDesc name={"تعداد"} num={title.cases} />
-        <ToolTipDesc name={"بهبود"} num={title.recovered} />
-        <ToolTipDesc name={"مرگ و میر"} num={title.deaths} />
-      </div>
+      <MapDesc data={title} />
     </React.Fragment>
   );
 };
@@ -77,16 +74,5 @@ const LoadingToolTip = () => {
         </span>
       </div>
     </React.Fragment>
-  );
-};
-
-const ToolTipDesc = ({ name, num }) => {
-  return (
-    <div className="flex flex-col items-center">
-      <span className="text-blue-950 font-bold text-lg ">
-        {intToString(num)}
-      </span>
-      <span className="text-gray-400 text-xs">{name}</span>
-    </div>
   );
 };
