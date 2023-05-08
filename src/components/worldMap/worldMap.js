@@ -12,7 +12,11 @@ const WorldMap = ({ covidData, isLoading }) => {
   const router = useRouter();
   const [openTitle, setOpenTitle] = useState(false);
   return (
-    <div className="max-w-screen-xl mx-auto ">
+    <section className="max-w-screen-xl mx-auto ">
+      <div className="flex flex-col gap-y-4 items-center justify-center">
+        <h1 className="text-4xl text-blue-950 font-bold">نقشه توزیع covid-19</h1>
+        <p className="text-slate-400">در نقشه زیر توزیع موارد کوید 19 آمده است ...</p>
+      </div>
       <ComposableMap className="relative">
         <Geographies
           geography="/features.json"
@@ -65,7 +69,7 @@ const WorldMap = ({ covidData, isLoading }) => {
           }
         </Geographies>
       </ComposableMap>
-    </div>
+    </section>
   );
 };
 
